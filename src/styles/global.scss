@@ -69,6 +69,12 @@ a{
   padding: 3rem;
   position: relative;
   border-radius: 0.25rem;
+  transition: all 0.2s ease-in;
+  opacity: 0;
+}
+
+.ReactModal__Content--after-open{
+  opacity: 1;
 }
 
 .react-modal-close{

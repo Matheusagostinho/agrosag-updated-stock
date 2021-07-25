@@ -20,6 +20,10 @@ interface HomeProps{
 }
 
 Modal.setAppElement('#__next')
+
+export function isMobile(): boolean {
+  return / Safari|iOS Safari|iPhone|iPad|iPod|BlackBerry|Opera Mini/i.test(navigator.userAgent);
+}
 export default function Home({insumos}:HomeProps) {
 
   const [isNewModalOpen, setIsNewModalOpen] = useState(false)
@@ -39,6 +43,7 @@ export default function Home({insumos}:HomeProps) {
         }
       })
     ) )
+
   }, []);
 
  function handleUpdatedStock(id:number, newStock: number){
@@ -99,6 +104,7 @@ export default function Home({insumos}:HomeProps) {
             <GrFormClose size={25}/>
           </button>
                 <div className={styles.modalHome}>
+                  <span> Novo valor do estoque</span>
                   <input
                   type="number"
                   placeholder='Estoque'

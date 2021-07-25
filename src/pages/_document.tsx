@@ -44,7 +44,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
             rel="stylesheet"
           />
-          <link rel="shortcut icon" href="favicon.png" type="image/png" />
+          <link rel="shortcut icon" href="/favicon.png" type="image/png" />
           <link rel="manifest" href="/manifest.json" />
           <title>AgroSag</title>
         </Head>
