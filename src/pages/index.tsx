@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import { Header } from "../components/Header";
 import { UpdateStock } from "../components/UpdateStock";
 import { api } from "../services/api";
@@ -117,7 +117,7 @@ export default function Home({insumos}:HomeProps) {
     </div>
   )
 }
-export const getServerSideProps: GetServerSideProps = async ()=>{
+export const getStaticProps: GetStaticProps = async ()=>{
   const response = await api.get('/retornainsumosativos')
   console.log(response.data);
 
@@ -136,7 +136,8 @@ export const getServerSideProps: GetServerSideProps = async ()=>{
   return{
     props:{
       insumos,
-    }
+    },
+    revalidate: 60 * 60 * 1 // 1 hour
   }
 
 }
