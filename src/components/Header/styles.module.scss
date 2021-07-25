@@ -1,0 +1,19 @@
+.containerHeader{
+  width: 100%;
+  height: 80px;
+  background: var(--green-500);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 1rem;
+  img{
+    max-width: 70px;
+    max-height: 70px;
+
+  }
+  span{
+    color:var(--gray-100);
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+}
