@@ -32,17 +32,40 @@ export default function Home({insumos}:HomeProps) {
 
   const [amountNewStock, setAmountNewStock] = useState(0)
   const [idStock, setIdStock] = useState(0)
-  const [stocks, setStocks] = useState(insumos)
+
+
+  const [stocks, setStocks] = useState<Insumo[]>(insumos)
+
 
   useEffect(() => {
-    localStorage.setItem('@AgroSag:stock', JSON.stringify(
-      stocks.map(stock => {
+    const storageStock = JSON.parse(localStorage.getItem('@AgroSag:stock' ))
+
+
+
+    if (storageStock) {
+
+
+      const insumosdFormatted = insumos.map(insumo => {
         return {
-          id: stock.id,
-          stock: stock.stock
+          ...insumo,
+          stock: (storageStock.find(item => item.id === insumo.id ? item: false)).stock
         }
+
       })
-    ) )
+      console.log(insumosdFormatted);
+      setStocks(insumosdFormatted)
+    }else{
+      localStorage.setItem('@AgroSag:stock', JSON.stringify(
+        stocks.map(stock => {
+          return {
+            id: stock.id,
+            stock: stock.stock
+          }
+        })
+      ) )
+    }
+
+
 
   }, []);
 

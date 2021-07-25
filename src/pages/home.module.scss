@@ -62,7 +62,12 @@ table{
   justify-content: center;
   margin-top: 1rem;
   min-height: 200px;
-
+  span{
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
   input{
     background-color: var(--white);
     height: 3rem;
