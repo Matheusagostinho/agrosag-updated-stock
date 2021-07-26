@@ -12,9 +12,9 @@ function MyApp({ Component, pageProps }) {
         stopDelayMs={200}
         height={5}
       />
-
-        <Component {...pageProps} />
-
+        <ChakraProvider theme={theme}>
+          <Component {...pageProps} />
+        </ChakraProvider>
     </>
   )
 }

@@ -8,12 +8,12 @@ const config: ThemeConfig = {
 const theme = extendTheme({
   config,
   colors: {
-    white: '#F1f1f1',
+    white: '#ededee',
     black: '#13131a',
     red: {
       500: '#e02041',
       600: '#be1b36'
-    }
+    },
   },
   fonts: {
     heading: 'Inter',

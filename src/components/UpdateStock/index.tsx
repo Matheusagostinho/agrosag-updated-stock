@@ -12,20 +12,20 @@ export function UpdateStock(){
     const dataFormatted = dataStock.map(insumo => {
       return {
         ID_INSUMO: insumo.id,
-        ESTOQUEMIN: insumo.stock
+        DATA: new Intl.DateTimeFormat('pt-BR',
+        ).format(new Date(new Date())),
+        QT: insumo.stock
       }
     })
 
-    console.log(dataFormatted);
 
-   await api.post('/contagemestoque',
+
+   const response = await api.post('/contagemestoque',
       dataFormatted
-    ).then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    )
+
+    console.log(response);
+
 
   }
 
